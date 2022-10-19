@@ -1,12 +1,13 @@
 import React from "react";
+import NavBar from "./Components/NavBar/navBar.jsx";
 import AddPost from "./Components/AddPost/AddPost";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
   return (
     <>
       <div>
+        <NavBar />
         <AddPost />
       </div>
     </>
