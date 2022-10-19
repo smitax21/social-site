@@ -1,6 +1,7 @@
 import Button from "react-bootstrap/Button";
 import React from "react";
 import Form from "react-bootstrap/Form";
+import "./AddPost.scss";
 
 const AddPost = () => {
   return (
