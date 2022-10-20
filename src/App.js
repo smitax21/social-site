@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from "./Components/NavBar/navBar";
 import AddPost from "./Components/AddPost/AddPost";
 import ViewPost from "./Components/VeiwPost/ViewPost";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const [jokes, changeJokes] = useState([
