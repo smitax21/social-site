@@ -16,7 +16,10 @@ body {
 }
 a {
   text-decoration: none;
-  color: white;
+  color: lightgray;
+}
+a:hover {
+  color: lightgray;
 }
 .nav-container,
 .nav-buttons {
