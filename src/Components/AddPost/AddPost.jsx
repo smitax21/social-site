@@ -23,6 +23,7 @@ const AddPost = (props) => {
     let keyToChange = e.target.name;
     setFormValue({ ...formValue, [keyToChange]: newVal });
     const newState = { ...formValue };
+    console.log(newState);
   };
 
   // Handle submit
@@ -74,7 +75,7 @@ const AddPost = (props) => {
           </Button>
         </Form>
 
-        <Link>View</Link>
+        <Link to="/viewpost">View</Link>
       </div>
     </>
   );
