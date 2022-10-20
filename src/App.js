@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import NavBar from "./Components/NavBar/navBar";
 import AddPost from "./Components/AddPost/AddPost";
 import ViewPost from "./Components/VeiwPost/ViewPost";
 import "./App.scss";
 
 function App() {
+  const [data, setData] = useState([]);
+
   const [jokes, changeJokes] = useState([
     {
       username: "creator",
@@ -27,12 +30,33 @@ function App() {
       image: "./images/post4.jpeg",
     },
   ]);
+
+  useEffect(() => {}, []);
+
+  function updateMyValues(value) {
+    setData((prev) => {
+      let newState = [...prev, value];
+      localStorage.setItem("data", JSON.stringify(newState));
+      return newState;
+    });
+  }
   return (
     <>
       <div>
         <NavBar />
-        <AddPost changeJokes={changeJokes} />
-        <ViewPost jokes={jokes} />
+        <Routes>
+          <Route
+            path="/"
+            index
+            element={
+              <AddPost
+                functionFromParent={(val) => updateMyValues(val)}
+                changeJokes={changeJokes}
+              />
+            }
+          />
+          <Route path="/viewpost" element={<ViewPost jokes={jokes} />} />
+        </Routes>
       </div>
     </>
   );
