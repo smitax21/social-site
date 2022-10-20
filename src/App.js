@@ -7,6 +7,7 @@ import "./App.scss";
 
 function App() {
   const [data, setData] = useState([
+
     {
       username: "creator",
       post: "What are the similarities between Java and JavaScript?",
@@ -38,10 +39,12 @@ function App() {
       return newState;
     });
   }
+
   return (
     <>
       <div>
         <NavBar />
+
         <Routes>
           <Route
             path="/"
@@ -55,6 +58,7 @@ function App() {
           />
           <Route path="/viewpost" element={<ViewPost data={data} />} />
         </Routes>
+
       </div>
     </>
   );

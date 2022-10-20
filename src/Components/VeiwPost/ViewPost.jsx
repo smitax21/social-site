@@ -36,9 +36,10 @@ const ViewPost = (props) => {
     <>
       <Card style={{ width: "18rem" }}>
         <Card.Body>{postData()}</Card.Body>
-      </Card>
-    </>
-  );
-};
 
+      </Card>
+    ));
+  };
+  return buildCards();
+}
 export default ViewPost;
