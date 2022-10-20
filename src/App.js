@@ -6,6 +6,7 @@ import ViewPost from "./Components/VeiwPost/ViewPost";
 import "./App.scss";
 
 function App() {
+
   const [data, setData] = useState([]);
 
   const [jokes, changeJokes] = useState([
@@ -40,10 +41,12 @@ function App() {
       return newState;
     });
   }
+
   return (
     <>
       <div>
         <NavBar />
+
         <Routes>
           <Route
             path="/"
@@ -57,6 +60,7 @@ function App() {
           />
           <Route path="/viewpost" element={<ViewPost jokes={jokes} />} />
         </Routes>
+
       </div>
     </>
   );
