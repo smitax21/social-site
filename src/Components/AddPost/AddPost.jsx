@@ -28,10 +28,10 @@ const AddPost = (props) => {
 
   // Handle submit
   const handleSubmit = (e) => {
+    // e.preventDefault();
     if (formValue.username != null) {
       props.functionFromParent(formValue);
     } else {
-      e.preventDefault();
       alert("Please fill up username");
     }
   };
@@ -70,9 +70,7 @@ const AddPost = (props) => {
               onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Button type="submit" onClick={() => handleSubmit()}>
-            Add
-          </Button>
+          <Button onClick={() => handleSubmit()}>Add</Button>
         </Form>
 
         <Link to="/viewpost">View</Link>
