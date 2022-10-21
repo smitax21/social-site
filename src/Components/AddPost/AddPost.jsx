@@ -72,8 +72,6 @@ const AddPost = (props) => {
           </Form.Group>
           <Button onClick={() => handleSubmit()}>Add</Button>
         </Form>
-
-        <Link to="/viewpost">View</Link>
       </div>
     </>
   );

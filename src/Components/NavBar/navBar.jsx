@@ -24,12 +24,6 @@ const NavBar = () => {
           <Link to="/" className="nav-btn add">
             Add Jokes
           </Link>
-          {/* <Nav.Link className="nav-btn view" to="/viewpost">
-            View Jokes
-          </Nav.Link> */}
-          {/* <Nav.Link className="nav-btn add" to="/addpost">
-            Add Joke
-          </Nav.Link> */}
         </Nav>
       </Container>
     </Navbar>
