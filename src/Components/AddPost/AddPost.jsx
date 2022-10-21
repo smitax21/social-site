@@ -7,6 +7,7 @@ import toastr from "reactjs-toastr";
 
 const AddPost = (props) => {
   const [formValue, setFormValue] = useState({
+    id: "",
     username: "",
     post: "",
     img: "",
@@ -70,12 +71,14 @@ const AddPost = (props) => {
               onChange={(e) => handleChange(e)}
             />
           </Form.Group>
-          <Button type="submit" onClick={() => handleSubmit()}>
+          <Button
+            type="submit"
+            className="submit-btn"
+            onClick={() => handleSubmit()}
+          >
             Add
           </Button>
         </Form>
-
-        <Link to="/viewpost">View</Link>
       </div>
     </>
   );

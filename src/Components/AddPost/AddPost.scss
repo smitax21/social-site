@@ -5,3 +5,15 @@
   text-align: center;
   height: 100vh;
 }
+.submit-btn {
+  background-color: #e61624;
+  color: white;
+  border: transparent;
+  font-size: 18px;
+  font-weight: 700;
+}
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #a6c83d;
+  color: black;
+}

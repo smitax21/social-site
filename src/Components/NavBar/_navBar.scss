@@ -9,18 +9,15 @@ body {
   font-size: 18px;
   font-weight: 900;
 }
-
+.nav-container {
+  background-color: white;
+  border-radius: 8px;
+}
 .logo {
   display: block;
   width: 100px;
 }
-a {
-  text-decoration: none;
-  color: lightgray;
-}
-a:hover {
-  color: lightgray;
-}
+
 .nav-container,
 .nav-buttons {
   display: flex;
@@ -34,10 +31,15 @@ a:hover {
 }
 .nav-btn {
   padding: 10px;
+  color: white;
+  text-decoration: none;
 }
 .nav-btn.view {
   background-color: $red-color;
 }
 .nav-btn.add {
   background-color: $green-color;
+}
+.av-btn {
+  color: black;
 }
