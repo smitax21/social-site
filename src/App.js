@@ -33,9 +33,14 @@ function App() {
     },
   ]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const datas = localStorage.getItem("data");
+
+    setData(JSON.parse(datas) || []);
+  }, []);
 
   function updateMyValues(value) {
+    console.log(value);
     setData((prev) => {
       let newState = [...prev, value];
       localStorage.setItem("data", JSON.stringify(newState));
@@ -55,7 +60,7 @@ function App() {
             element={
               <AddPost
                 functionFromParent={(val) => updateMyValues(val)}
-                setData={setData}
+                // setData={setData}
               />
             }
           />
