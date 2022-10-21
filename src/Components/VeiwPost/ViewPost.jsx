@@ -1,29 +1,34 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Card, Button, Table } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { FaHeart } from "react-icons/fa";
 // import "./_ViewPost.css";
 
 const ViewPost = (props) => {
-  let count = 0;
-  function countLikes() {
-    count = count + 1;
-    return count;
-  }
+  const [count, setCount] = useState(0);
+  const countLikes = () => {
+    setCount(count + 1);
+  };
 
   const postData = () => {
     let dataList = props.data.map((current) => {
       return (
-        <Card style={{ width: "200px" }}>
+        <Card style={{ width: "300px" }}>
           <Card.Img variant="top" src={current.img} />
           <Card.Body>
             <Card.Text>{current.post}</Card.Text>
             <Card.Title>{current.username}</Card.Title>
-            <div>
-              <div onClick={() => countLikes()}>
-                <FaHeart />
-              </div>
+            <div className="count-bar">
               <p id="count">{count}</p>
+              <Button
+                key={current.id}
+                type="button"
+                className="heart-btn"
+                onClick={() => {
+                  countLikes();
+                }}
+              >
+                <FaHeart />
+              </Button>
             </div>
           </Card.Body>
         </Card>
@@ -32,12 +37,6 @@ const ViewPost = (props) => {
     return dataList;
   };
 
-  return (
-    <>
-      <Card style={{ width: "18rem" }}>
-        <Card.Body>{postData()}</Card.Body>
-      </Card>
-    </>
-  );
+  return <div className="card-wrap">{postData()}</div>;
 };
 export default ViewPost;
